@@ -1106,7 +1106,7 @@ def build_home(lang):
 
     worlds = "".join(world_tile(p, lang, path) for p in C.PROJECTS)
     work = (f'<section id="work"><div class="wrap"><div class="sh" style="margin-top:44px"><h2>{L(lang, "Four projects", "Četiri projekta")}</h2>'
-            f'<p>{L(lang, "Backend work, a web shop and AI. Each page looks like its project.", "Backend radovi, web shop i AI. Svaka stranica izgleda kao njen projekat.")}</p></div>'
+            f'<p>{L(lang, "Backend work, a web shop and AI.", "Backend radovi, web shop i AI.")}</p></div>'
             f'<div class="worlds">{worlds}</div></div></section>')
 
     # experience, expandable

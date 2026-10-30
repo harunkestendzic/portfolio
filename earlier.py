@@ -490,3 +490,12 @@ META = {
     "player-score-analysis-java": ("software", ["learning"]),
     "workshop-registrations-java": ("software", ["learning"]),
 }
+
+
+# Display order: JavaScript projects first, then the rest by quality; Hangman last.
+_ORDER = [
+    "forkify", "mapty", "bankist", "pig-game", "guess-my-number",
+    "car-review", "tourist-manager", "workshop-registrations-java", "player-score-analysis-java",
+    "shop-reports-java", "network-project-7", "gym-extreme", "ramo-website", "hangman",
+]
+EARLIER.sort(key=lambda e: _ORDER.index(e["slug"]) if e["slug"] in _ORDER else len(_ORDER))
