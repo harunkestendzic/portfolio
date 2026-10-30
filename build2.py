@@ -131,6 +131,11 @@ footer.ft .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-b
 
 /* Ramo world: a teletext page */
 .w-ramo{background:#000;color:#fff;font-family:"VT323",monospace}
+.w-ramo .w-scene{position:absolute;left:0;right:0;top:0;bottom:58px;z-index:0;background-color:#3d8ce0;background-repeat:repeat-x,no-repeat,no-repeat;background-position:center bottom 4px,center bottom 26%,center top;background-size:auto 44%,max(100%,460px) auto,cover;image-rendering:pixelated}
+.w-ramo .tt-bar{position:relative;background:rgba(0,0,0,.84);margin:12px 16px 0;padding:4px 10px!important}
+.w-ramo .tt-band{position:relative}
+.w-ramo .w-list span{white-space:nowrap}
+.w-ramo .w-list div i{transform:translateY(-4px)}
 .w-ramo .tt-bar{display:flex;gap:14px;padding:12px 16px 0;font-size:20px;color:#fff}
 .w-ramo .tt-bar b{color:#FFFF00;font-weight:400}
 .w-ramo .tt-band{margin:8px 16px 0;background:#0000FF;color:#fff;padding:4px 10px;font-size:22px;display:flex;justify-content:space-between}
@@ -139,6 +144,7 @@ footer.ft .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-b
 .w-ramo .w-list div{display:flex;gap:6px;color:#00FFFF}
 .w-ramo .w-list div i{flex:1;border-bottom:3px dotted #00FFFF;transform:translateY(-6px)}
 .w-ramo .w-list div b{color:#FFFF00;font-weight:400}
+.w-ramo .w-list{background:rgba(0,0,0,.84);border:2px solid #0000FF;padding:6px 12px;font-size:clamp(16px,1.45vw,20px);line-height:1.2;top:30%;width:auto;min-width:44%;right:4%}
 .w-ramo .w-street{position:absolute;left:0;right:0;bottom:58px;height:19%;display:flex;align-items:flex-end;justify-content:flex-end;gap:5%;padding-right:6%;border-bottom:4px solid #444}
 .w-ramo .w-street img{height:100%;width:auto;image-rendering:pixelated}
 .w-ramo .w-meta{color:#fff;font-size:22px}
@@ -1048,7 +1054,8 @@ def world_tile(p, lang, path):
         rows = [(L(lang, "Plays and downloads", "Igranja i preuzimanja"), "800+"), (L(lang, "FIT Coding Challenge", "FIT Coding Challenge"), L(lang, "1st", "1."), ),
                 (L(lang, "Episodes", "Epizode"), "5+1")]
         lst = "".join(f"<div><span>{x}</span><i></i><b>{y}</b></div>" for x, y in rows)
-        inner = (f'<div class="tt-bar" aria-hidden="true"><span>P100</span><b>VHT</b><span>15.04.92</span></div>'
+        inner = (f'<div class="w-scene" aria-hidden="true" style="background-image:url({a}bg-skyline.png),url({a}bg-hills.png),url({a}bg-sky.jpg)"></div>'
+                 f'<div class="tt-bar" aria-hidden="true"><span>P100</span><b>VHT</b><span>15.04.92</span></div>'
                  f'<div class="tt-band" aria-hidden="true"><span>TELETEKST</span><span>RAMO</span></div>'
                  f'<img class="w-logo" src="{a}logo.png" alt="" width="400" height="363"><div class="w-list" aria-hidden="true">{lst}</div>'
                  f'<div class="w-street" aria-hidden="true"><span class="tramx"><img src="{a}tram-full.png" alt=""></span><img src="{a}burek.png" alt="" style="height:22%"><img src="{a}enemy-1.png" alt=""><img src="{a}ramo-pistol.png" alt=""><img src="{a}boss.png" alt=""></div>'
