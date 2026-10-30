@@ -131,7 +131,7 @@ footer.ft .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-b
 
 /* Ramo world: a teletext page */
 .w-ramo{background:#000;color:#fff;font-family:"VT323",monospace}
-.w-ramo .w-scene{position:absolute;left:0;right:0;top:0;bottom:58px;z-index:0;background-color:#3d8ce0;background-repeat:repeat-x,no-repeat,no-repeat;background-position:center bottom 4px,center bottom 26%,center top;background-size:auto 44%,max(100%,460px) auto,cover;image-rendering:pixelated}
+.w-ramo .w-scene{position:absolute;left:0;right:0;top:0;bottom:58px;z-index:0;background-color:#3d8ce0;background-repeat:repeat-x,no-repeat,no-repeat;background-position:center bottom 4px,center bottom 26%,center top;background-size:auto 44%,100% auto,cover;image-rendering:pixelated}
 .w-ramo .tt-bar{position:relative;background:rgba(0,0,0,.84);margin:12px 16px 0;padding:4px 10px!important}
 .w-ramo .tt-band{position:relative}
 .w-ramo .w-list span{white-space:nowrap}
@@ -348,7 +348,8 @@ pre{margin:0;overflow-x:auto;padding:16px;border-radius:10px;font:14px/1.5 ui-mo
 .th-ramo .nav a{color:#fff;border-radius:0}.th-ramo .nav a[aria-current]{background:#0000FF}.th-ramo .nav .lang{border-color:#FFFF00;color:#FFFF00}
 .th-ramo .btn{font-family:"VT323",monospace;font-size:22px;border-radius:0;background:#FFFF00;color:#000;border-color:#FFFF00;padding:4px 14px}
 .th-ramo .btn.ghost{background:#000;color:#00FFFF;border-color:#00FFFF}
-.r-hero{padding:22px 0 0;background:var(--r-city) center bottom 6px/auto 300px repeat-x,var(--r-hills) center bottom 120px/max(100%,1100px) auto no-repeat,var(--r-sky) center top/cover #3d8ce0;image-rendering:pixelated}
+.r-hero{padding:22px 0 0;background-color:#3d8ce0;background-repeat:repeat-x,no-repeat,no-repeat;background-position:center bottom 6px,center bottom 120px,center top;background-size:auto 300px,100% auto,cover;image-rendering:pixelated}
+@media (max-width:1100px){.r-hero{background-size:auto 300px,1100px auto,cover}}
 .th.th-ramo{background:linear-gradient(#0a1a5c 0,#071040 900px,#050a2c 100%)}
 .th-ramo .top{background:rgba(0,0,0,.9)}
 .r-grid>div:first-child,.tt-index{background:rgba(0,0,0,.84);padding:18px 20px;border:2px solid #0000FF}
@@ -950,7 +951,7 @@ def page_ramo(p, lang, path, idx):
     pages = [110 + 15 * i for i in range(len(secs))]
     index = "".join(f'<a href="#{s[0]}"><span>{E(s[1])}</span><i></i><b>{pg}</b></a>' for s, pg in zip(secs, pages))
     index += f'<a href="#media"><span>{L(lang, "Screenshots and video", "Slike i video")}</span><i></i><b>200</b></a>'
-    hero = (f'<section class="r-hero" style="--r-sky:url({a}bg-sky.jpg);--r-hills:url({a}bg-hills.png);--r-city:url({a}bg-skyline.png)"><div class="wrap">'
+    hero = (f'<section class="r-hero" style="background-image:url({a}bg-skyline.png),url({a}bg-hills.png),url({a}bg-sky.jpg)"><div class="wrap">'
             f'<div class="tt-bar"><span>P100</span><b>VHT</b><span>{L(lang, "Wed 15.04.92", "Sri 15.04.92")}</span><span class="g tt-clock">18:42:07</span></div>'
             f'<div class="tt-band"><span>TELETEKST</span><span>RAMO 100</span></div>'
             f'<div class="r-grid"><div><h1 class="sr">Ramo</h1><img class="r-logo" src="{a}logo.png" alt="Ramo" width="400" height="363">'
