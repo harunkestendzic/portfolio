@@ -348,7 +348,7 @@ pre{margin:0;overflow-x:auto;padding:16px;border-radius:10px;font:14px/1.5 ui-mo
 .th-ramo .nav a{color:#fff;border-radius:0}.th-ramo .nav a[aria-current]{background:#0000FF}.th-ramo .nav .lang{border-color:#FFFF00;color:#FFFF00}
 .th-ramo .btn{font-family:"VT323",monospace;font-size:22px;border-radius:0;background:#FFFF00;color:#000;border-color:#FFFF00;padding:4px 14px}
 .th-ramo .btn.ghost{background:#000;color:#00FFFF;border-color:#00FFFF}
-.r-hero{padding:22px 0 0;background-color:#3d8ce0;background-repeat:repeat-x,no-repeat,no-repeat;background-position:center bottom 6px,center bottom 120px,center top;background-size:auto 300px,100% auto,cover;image-rendering:pixelated}
+.r-hero{padding:22px 0 0;background-color:#3d8ce0;background-repeat:repeat-x,no-repeat,no-repeat;background-position:center bottom 6px,center bottom 40px,center top;background-size:auto 300px,100% auto,cover;image-rendering:pixelated}
 @media (max-width:1100px){.r-hero{background-size:auto 300px,1100px auto,cover}}
 .th.th-ramo{background:linear-gradient(#0a1a5c 0,#071040 900px,#050a2c 100%)}
 .th-ramo .top{background:rgba(0,0,0,.9)}
