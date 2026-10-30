@@ -61,21 +61,21 @@ UI = {
 HOME = {
     "title": t("Harun Kestendžić", "Harun Kestendžić"),
     "description": t(
-        "Game and software developer in Sarajevo. Unity and C#, shipped games, and a Computer Science degree in progress.",
-        "Developer igara i softvera iz Sarajeva. Unity i C#, objavljene igre i studij računarskih nauka u toku."),
-    "hero_h1": t("Building games, and the systems that run them.",
-                 "Pravim igre i sisteme koji ih pokreću."),
+        "Backend and software developer in Sarajevo. Node.js, C#, PHP and cloud deployment, with a Computer Science degree in progress.",
+        "Backend i softverski developer iz Sarajeva. Node.js, C#, PHP i deploy u cloudu, uz studij računarskih nauka u toku."),
+    "hero_h1": t("Building backend systems, and learning to make them intelligent.",
+                 "Pravim backend sisteme i učim kako ih napraviti pametnim."),
     "hero_p": t(
         "Computer Science student at SSST in Sarajevo, minoring in Electrical Engineering. "
-        "I work mainly in Unity and C#: one solo game released and played 800+ times, "
-        "a 16,000-line roguelike in development, and a year as a junior game developer in a studio.",
+        "I build backend systems and web applications: a shop deployed on Oracle Cloud, APIs in Node.js and PHP. "
+        "Before that I spent a year as a junior developer in a studio, building UI and systems. I now work through the Backend AI Engineering track at FlyRank.",
         "Student računarskih nauka na SSST-u u Sarajevu, sa minorom iz elektrotehnike. "
-        "Najviše radim u Unityju i C#-u: jedna samostalno napravljena igra objavljena i igrana 800+ puta, "
-        "roguelike od 16.000 linija koda u razvoju i godina rada kao junior game developer u studiju."),
+        "Pravim backend sisteme i web aplikacije: shop postavljen na Oracle Cloud, API-je u Node.js-u i PHP-u. "
+        "Prije toga sam godinu dana radio kao junior developer u studiju, na UI-ju i sistemima. Sada radim kroz smjer Backend AI Engineering u FlyRanku."),
     "brief_title": t("At a glance", "Ukratko"),
     "brief": [
-        (t("Looking for", "Tražim"), t("Junior developer or internship role, in games or software",
-                                       "Poziciju junior developera ili praksu, u igrama ili softveru")),
+        (t("Looking for", "Tražim"), t("Junior developer or internship role, in backend, AI or software",
+                                       "Poziciju junior developera ili praksu, u backendu, AI-ju ili softveru")),
         (t("Location", "Lokacija"), t("Sarajevo, Bosnia and Herzegovina", "Sarajevo, Bosna i Hercegovina")),
         (t("Studying", "Studij"), t("BSc Computer Science, SSST, 3rd year (graduating 2028)",
                                     "BSc računarske nauke, SSST, 3. godina (diploma 2028.)")),
@@ -92,8 +92,8 @@ HOME = {
                                 "prosjek od 10 nakon četiri semestra na SSST-u (81,75/100, B+), uz Atlantbh stipendiju")),
     ],
     "work_h": t("Selected work", "Izdvojeni projekti"),
-    "work_intro": t("Three games, each with its own page: what it is, how its systems fit together, and what I built.",
-                    "Tri igre, svaka sa svojom stranicom: šta je, kako se sistemi uklapaju i šta sam ja napravio."),
+    "work_intro": t("Projects, each with its own page: what it is, how it is built, and what I did.",
+                    "Projekti, svaki sa svojom stranicom: šta je, kako je napravljen i šta sam radio."),
     "more_h": t("Smaller projects", "Manji projekti"),
     "exp_h": t("Experience", "Iskustvo"),
     "skills_h": t("Skills, with evidence", "Vještine, uz dokaze"),

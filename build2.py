@@ -1081,10 +1081,10 @@ def build_home(lang):
     pre = rel(path, "")
     side = [("now", L(lang, "Now", "Trenutno"), L(lang, "Backend AI Engineering intern at FlyRank", "Praksa iz Backend AI Engineeringa u FlyRanku")),
             ("", L(lang, "Studying", "Studij"), L(lang, "Computer Science at SSST, graduating 2028", "Računarske nauke na SSST-u, diploma 2028.")),
-            ("", L(lang, "Looking for", "Tražim"), L(lang, "A junior or intern role in backend, software or games", "Junior poziciju ili praksu: backend, softver ili igre")),
+            ("", L(lang, "Looking for", "Tražim"), L(lang, "A junior or intern role in backend, AI or software", "Junior poziciju ili praksu: backend, AI ili softver")),
             ("", L(lang, "Based in", "Lokacija"), L(lang, "Sarajevo, Bosnia and Herzegovina", "Sarajevo, Bosna i Hercegovina"))]
     side_html = '<dl class="h-side">' + "".join(f'<div class="{c}"><dt>{E(k)}</dt><dd>{"<span class=dot></span>" if c == "now" else ""}<span>{E(v)}</span></dd></div>' for c, k, v in side) + "</dl>"
-    lede = L(lang, "I build games, and the systems behind them. Lately that means backends and AI.", "Pravim igre i sisteme iza njih. U posljednje vrijeme to znači backend i AI.")
+    lede = L(lang, "I build backend systems and web applications. Lately that means AI.", "Pravim backend sisteme i web aplikacije. U posljednje vrijeme to znači AI.")
     hero = (f'<section class="h-hero"><div class="wrap"><div><h1 class="h-name" aria-label="Harun Kestendžić"><span data-scr>Harun</span><span data-scr>Kestendžić</span></h1>'
             f'<p class="h-lede"><span class="prompt" aria-hidden="true">&gt;</span> <span class="typed" data-type>{lede}</span><span class="caret" aria-hidden="true"></span></p>'
             f'<div class="btns"><a class="btn" href="{pre}{P["cv"]}">{IC["download"]}{L(lang, "Download CV", "Preuzmi CV")} <small>PDF</small></a>'
@@ -1093,7 +1093,7 @@ def build_home(lang):
 
     worlds = "".join(world_tile(p, lang, path) for p in C.PROJECTS)
     work = (f'<section id="work"><div class="wrap"><div class="sh" style="margin-top:44px"><h2>{L(lang, "Four projects", "Četiri projekta")}</h2>'
-            f'<p>{L(lang, "Three games and a web shop. Each page looks like its project.", "Tri igre i web shop. Svaka stranica izgleda kao njen projekat.")}</p></div>'
+            f'<p>{L(lang, "Backend work, a web shop and AI. Each page looks like its project.", "Backend radovi, web shop i AI. Svaka stranica izgleda kao njen projekat.")}</p></div>'
             f'<div class="worlds">{worlds}</div></div></section>')
 
     # experience, expandable
@@ -1160,7 +1160,7 @@ def build_about(lang):
     pre = rel(path, "")
     P = C.PERSON
     head = (f'<section class="a-head"><div class="wrap"><h1>{L(lang, "About me", "O meni")}</h1>'
-            f'<p>{L(lang, "I am a Computer Science student at SSST in Sarajevo, minoring in Electrical Engineering. I work mostly in C#: a solo game released and played 800+ times, a 16,000-line roguelike in development, and ten months as a junior game developer in a studio. Now I am moving towards backend and AI engineering, through a web shop I deployed on Oracle Cloud and the Backend AI Engineering track at FlyRank.", "Student sam računarskih nauka na SSST-u u Sarajevu, s minorom iz elektrotehnike. Najviše radim u C#-u: samostalno napravljena igra objavljena i igrana 800+ puta, roguelike od 16.000 linija koda u razvoju i deset mjeseci kao junior game developer u studiju. Sada idem prema backendu i AI inženjeringu, kroz web shop koji sam postavio na Oracle Cloud i smjer Backend AI Engineering u FlyRanku.")}</p>'
+                        f'<p>{L(lang, "I am a Computer Science student at SSST in Sarajevo, minoring in Electrical Engineering. I build backend systems and web applications: a web shop deployed on Oracle Cloud, and APIs in Node.js and PHP. Before that I spent ten months as a junior developer in a studio, building UI and systems in Unity and C#. Now I am moving towards backend and AI engineering through the Backend AI Engineering track at FlyRank.", "Student sam računarskih nauka na SSST-u u Sarajevu, s minorom iz elektrotehnike. Pravim backend sisteme i web aplikacije: web shop postavljen na Oracle Cloud, i API-je u Node.js-u i PHP-u. Prije toga sam deset mjeseci radio kao junior developer u studiju, na UI-ju i sistemima u Unityju i C#-u. Sada idem prema backend i AI inženjeringu kroz smjer Backend AI Engineering u FlyRanku.")}</p>'
             f'<div class="btns" style="margin-top:24px"><a class="btn" href="{pre}{P["cv"]}">{IC["download"]}{L(lang, "Download CV", "Preuzmi CV")} <small>PDF</small></a>'
             f'<a class="btn ghost" href="{pre}{P["letter"]}">{L(lang, "Recommendation letter", "Pismo preporuke")} <small>PDF</small></a></div></div></section>')
     sk = "".join(f'<div><b>{E(T(n, lang))}</b><span>{E(T(ev, lang))}</span></div>' for n, lv, ev in C.SKILLS)
