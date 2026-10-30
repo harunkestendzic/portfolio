@@ -643,7 +643,7 @@ def document(lang, path, title, desc, body, fragment=False):
     head = (f'<meta name="description" content="{E(desc)}">'
             f'<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="website"><meta property="og:image" content="https://harunkestendzic.github.io/portfolio/assets/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
             f'<meta name="theme-color" content="#1C2230"><meta name="referrer" content="strict-origin-when-cross-origin">'
-            f'<link rel="icon" href="{FAVICON_HREF}">'
+            f'<link rel="icon" type="image/png" sizes="64x64" href="{rel(path, "assets/icon-64.png")}">'f'<link rel="apple-touch-icon" sizes="180x180" href="{rel(path, "assets/apple-touch-icon.png")}">'
             f'<link rel="alternate" hreflang="{"bs" if lang == "en" else "en"}" href="{rel(path, other_path)}">'
             f'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
             f'<link rel="stylesheet" href="{FONTS}"><style>{CSS}</style>')
@@ -1292,7 +1292,7 @@ def main():
     used = set()
     for _, _, _, _, body in pages:
         used.update(_re.findall(r'assets/[^"\'#?) ]+', body))
-    used.update(["assets/" + C.PERSON["cv"].split("assets/")[-1], C.PERSON["letter"], "assets/og-card.png"])
+    used.update(["assets/" + C.PERSON["cv"].split("assets/")[-1], C.PERSON["letter"], "assets/og-card.png", "assets/icon-64.png", "assets/apple-touch-icon.png"])
     removed = 0
     for dp, _, fs in os.walk(os.path.join(DIST, "assets")):
         for fn in fs:
