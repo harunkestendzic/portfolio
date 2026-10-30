@@ -631,12 +631,17 @@ def footer(lang, path):
             f'<span><a href="mailto:{P["email"]}">{P["email"]}</a> · <a href="{P["github"]}">GitHub</a> · <a href="{P["linkedin"]}">LinkedIn</a></span></div></footer>')
 
 
+# Favicon: the hexagon from the preview card
+FAVICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 3 58 18v28L32 61 6 46V18z" fill="#1C2230" stroke="#E6AA50" stroke-width="4" stroke-linejoin="round"/><text x="32" y="41" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="24" fill="#E6AA50">{ }</text></svg>'
+FAVICON_HREF = 'data:image/svg+xml,' + __import__('urllib.parse').parse.quote(FAVICON_SVG, safe="")
+
+
 def document(lang, path, title, desc, body, fragment=False):
     other_path = path[3:] if lang == "bs" else "bs/" + path
     head = (f'<meta name="description" content="{E(desc)}">'
             f'<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="website"><meta property="og:image" content="https://harunkestendzic.github.io/portfolio/assets/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
             f'<meta name="theme-color" content="#1C2230"><meta name="referrer" content="strict-origin-when-cross-origin">'
-            f'<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z%27 fill=%27%231C2230%27/%3E%3C/svg%3E">'
+            f'<link rel="icon" href="{FAVICON_HREF}">'
             f'<link rel="alternate" hreflang="{"bs" if lang == "en" else "en"}" href="{rel(path, other_path)}">'
             f'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
             f'<link rel="stylesheet" href="{FONTS}"><style>{CSS}</style>')
