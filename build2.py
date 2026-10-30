@@ -65,7 +65,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:20px;height:60px}
 .mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.01em;margin-right:auto;font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 112}
-.mark svg{width:20px;height:20px;fill:currentColor}
+.mark svg{width:22px;height:22px;flex:none}
 .nav{display:flex;align-items:center;gap:4px;font-family:"Archivo",sans-serif;font-size:15px}
 .nav a{padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--muted)}
 .nav a:hover,.nav a[aria-current]{color:var(--ink)}
@@ -605,7 +605,9 @@ TONEARM = ('<svg class="arm" viewBox="0 0 120 260" aria-hidden="true"><circle cx
 
 
 # ===================================================================== frame
-HEX = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z"/></svg>'
+HEX = ('<svg class="ico" viewBox="0 0 64 64" aria-hidden="true">'
+       '<path d="M32 3 58 18v28L32 61 6 46V18z" fill="#1C2230" stroke="#E6AA50" stroke-width="4" stroke-linejoin="round"/>'
+       '<text x="32" y="41" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="24" fill="#E6AA50">{ }</text></svg>')
 
 
 def header(lang, path, active):
