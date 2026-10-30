@@ -337,12 +337,17 @@ pre{margin:0;overflow-x:auto;padding:16px;border-radius:10px;font:14px/1.5 ui-mo
 /* ================= RAMO: teletext, Sarajevo 1992 ================= */
 .th-ramo{--paper:#000;--surface:#000;--ink:#fff;--muted:#00FFFF;--line:#333;--line-2:#fff;--accent:#FFFF00;--accent-soft:#0000FF;
   --hydro:#00FFFF;--vulcan:#FF0000;--solar:#FFFF00;--font-body:"VT323",monospace;color-scheme:dark;font-family:"VT323",monospace;font-size:23px;line-height:1.25}
-.th-ramo .top{background:#000;border-bottom:2px solid #0000FF}
+.th-ramo .top{background:rgba(0,0,0,.9);border-bottom:2px solid #0000FF}
 .th-ramo .mark,.th-ramo .nav{font-family:"VT323",monospace;font-size:22px;font-variation-settings:normal}
 .th-ramo .nav a{color:#fff;border-radius:0}.th-ramo .nav a[aria-current]{background:#0000FF}.th-ramo .nav .lang{border-color:#FFFF00;color:#FFFF00}
 .th-ramo .btn{font-family:"VT323",monospace;font-size:22px;border-radius:0;background:#FFFF00;color:#000;border-color:#FFFF00;padding:4px 14px}
 .th-ramo .btn.ghost{background:#000;color:#00FFFF;border-color:#00FFFF}
-.r-hero{padding:22px 0 0}
+.r-hero{padding:22px 0 0;background:var(--r-city) center bottom 6px/auto 300px repeat-x,var(--r-hills) center bottom 120px/max(100%,1100px) auto no-repeat,var(--r-sky) center top/cover #3d8ce0;image-rendering:pixelated}
+.th.th-ramo{background:linear-gradient(#0a1a5c 0,#071040 900px,#050a2c 100%)}
+.th-ramo .top{background:rgba(0,0,0,.9)}
+.r-grid>div:first-child,.tt-index{background:rgba(0,0,0,.84);padding:18px 20px;border:2px solid #0000FF}
+.tt-bar{background:rgba(0,0,0,.84);padding:4px 8px}
+.r-street{border-bottom-color:#3a3a3a}
 .tt-bar{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:24px;color:#fff}
 .tt-bar b{font-weight:400;color:#FFFF00}.tt-bar .g{color:#00FF00}
 .tt-band{display:flex;justify-content:space-between;gap:12px;background:#0000FF;color:#fff;font-size:28px;padding:4px 14px;margin-top:10px}
@@ -939,7 +944,7 @@ def page_ramo(p, lang, path, idx):
     pages = [110 + 15 * i for i in range(len(secs))]
     index = "".join(f'<a href="#{s[0]}"><span>{E(s[1])}</span><i></i><b>{pg}</b></a>' for s, pg in zip(secs, pages))
     index += f'<a href="#media"><span>{L(lang, "Screenshots and video", "Slike i video")}</span><i></i><b>200</b></a>'
-    hero = (f'<section class="r-hero"><div class="wrap">'
+    hero = (f'<section class="r-hero" style="--r-sky:url({a}bg-sky.jpg);--r-hills:url({a}bg-hills.png);--r-city:url({a}bg-skyline.png)"><div class="wrap">'
             f'<div class="tt-bar"><span>P100</span><b>VHT</b><span>{L(lang, "Wed 15.04.92", "Sri 15.04.92")}</span><span class="g tt-clock">18:42:07</span></div>'
             f'<div class="tt-band"><span>TELETEKST</span><span>RAMO 100</span></div>'
             f'<div class="r-grid"><div><h1 class="sr">Ramo</h1><img class="r-logo" src="{a}logo.png" alt="Ramo" width="400" height="363">'
