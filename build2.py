@@ -1132,10 +1132,10 @@ def build_home(lang):
     for e in EARLIER:
         ty, _ = META[e["slug"]]
         groups.setdefault(ty, []).append(e)
-    order = [k for k in TYPES if k in groups]
     cards = []
-    for k in order:
-        for e in groups[k]:
+    for e in EARLIER:  # order set in earlier.py
+        k = META[e["slug"]][0]
+        if True:
             th = thumb_of(e)
             img = f'<img src="{pre}{th}" alt="" loading="lazy">' if th else ""
             chips = "".join(f"<span>{E(x.strip())}</span>" for x in e["stack"].split(",") if x.strip())
