@@ -650,11 +650,15 @@ FAVICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path
 FAVICON_HREF = 'data:image/svg+xml,' + __import__('urllib.parse').parse.quote(FAVICON_SVG, safe="")
 
 
+# Visit counter (GoatCounter: no cookies). Dashboard: https://harunkestendzic.goatcounter.com/
+GOATCOUNTER = '<script data-goatcounter="https://harunkestendzic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+
+
 def document(lang, path, title, desc, body, fragment=False):
     other_path = path[3:] if lang == "bs" else "bs/" + path
     head = (f'<meta name="description" content="{E(desc)}">'
             f'<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="website"><meta property="og:image" content="https://harunkestendzic.github.io/portfolio/assets/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
-            f'<meta name="theme-color" content="#1C2230"><meta name="referrer" content="strict-origin-when-cross-origin">'
+            + (GOATCOUNTER if not ARTIFACT else '') + f'<meta name="theme-color" content="#1C2230"><meta name="referrer" content="strict-origin-when-cross-origin">'
             f'<link rel="icon" type="image/png" sizes="64x64" href="{rel(path, "assets/icon-64.png")}">'f'<link rel="apple-touch-icon" sizes="180x180" href="{rel(path, "assets/apple-touch-icon.png")}">'
             f'<link rel="alternate" hreflang="{"bs" if lang == "en" else "en"}" href="{rel(path, other_path)}">'
             f'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
